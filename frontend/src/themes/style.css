@@ -1,0 +1,44 @@
+.oswald {
+    font-family: 'Oswald', sans-serif;
+}
+
+.anek {
+    font-family: 'Anek Gurmukhi', sans-serif;
+}
+
+.flat {
+    box-shadow: none !important;
+    outline: none;
+}
+
+.linkPreview:hover {
+    background-color: '#181c28';
+}
+
+.scrolling {
+    overflow-y: auto;
+}
+
+
+/* width */
+
+.scrolling::-webkit-scrollbar {
+    width: 2px;
+    height: 5px;
+}
+
+
+/* Track */
+
+.scrolling::-webkit-scrollbar-track {
+    border-radius: 10px;
+    cursor: move;
+}
+
+
+/* Handle */
+
+.scrolling::-webkit-scrollbar-thumb {
+    background: #88aacd;
+    border-radius: 10px;
+}
