@@ -61,6 +61,7 @@ void loop()
     while (!  getFingerprintEnroll(id) );
     delay(5000);
   }
+  
   // maintaining the delay after verification
   if(timer!=0){
     Serial.println(timer);
@@ -95,9 +96,9 @@ void loop()
     dist= dur * 0.034 / 2;
     delay(200);
 
-    Serial.print("Distance in cm: ");
-    Serial.print(dist); 
-    Serial.println("cm");
+    Serial.print("."); delay(500);
+    Serial.print("."); delay(500);
+    Serial.println(".");
 
     alerting(dist);
 
@@ -111,17 +112,13 @@ void alerting(int dist){
   if(dist<30){
       Serial.println("Alert!!!");
       digitalWrite(LED_BUILTIN, HIGH);
+      
+      tone(buzzerPin, 1000);// Play a tone of 1000 Hz
       delay(5000);
-    // tone(buzzerPin, 1000);                 // Play a tone of 1000 Hz
-    // delay(500);                            // Wait for 500ms
-    // noTone(buzzerPin);   
-    // digitalWrite(7, HIGH);                     // Stop playing the tone
-    // delay(1000);    
-                          // Wait for another 500ms
+      noTone(buzzerPin);// Stop playing the tone
     }
     else{
        digitalWrite(LED_BUILTIN, LOW);
-      // digitalWrite(7, LOW);
     }
 }
 

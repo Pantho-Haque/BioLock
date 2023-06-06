@@ -1,5 +1,5 @@
 module.exports = {
   accountSid: "AC668c7a2093217ec1795862100c7e3407",
-  authToken: "e3d910840e87f8217eec2edf608b47eb",
-  twilioNumber: '+14344046455',
+  authToken: "a77fa1c36f425af604cb343fa8c5b48c",
+  twilioNumber: "+14344046455",
 };

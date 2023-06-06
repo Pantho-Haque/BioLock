@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 // open serial port and start reading data
-const port = new SerialPort({ path: "COM4", baudRate: 9600 });
+const port = new SerialPort({ path: "COM3", baudRate: 9600 });
 const parser = port.pipe(new ReadlineParser({ delimiter: "\n" }));
 port.on("open", function () {
   console.log("Serial port COM4 open");
@@ -41,6 +41,7 @@ port.on("data", async (data) => {
 
     let parsed = theline.split("-");
 
+    
     if (theline.includes("Alert")) {
       SerialSave("An Alert Message has been sent\n");
       SendAlertMessage();
